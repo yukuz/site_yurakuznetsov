@@ -46,6 +46,7 @@ div .navbar-item {
 
 .navbar-menu {
    margin-top: -10px;
+   background-color: chartreuse;
    margin-bottom: -10px;
 
 }
