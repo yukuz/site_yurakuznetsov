@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru" class="has-background-dark has-text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <title>Юра Кузнецов</title>
+</head>
+<body>
+    <section class="section1 columns is-vcentered is-centered has-text-grey-light">
+        <div class="column has-text-centered is-5">
+
+            <h5 class="title is-5 has-text-grey-light">Юра Кузнецов. Видео и музыка: все обо мне</h5>
+
+            <p>Моя карьера в индустрии развлечений началась в 2000 году. Вскоре не только мне, но и окружающим, стало очевидно, что работа в этой отрасли — мое призвание. С тех пор мне не раз приходилось сотрудничать с клиентами и другими артистами над самыми разными проектами. С каждым из них мои профессиональные навыки становились лучше. Я знаю, насколько важно применять инновационные подходы в работе. Я постоянно слежу за современными тенденциями, чтобы быть в курсе всего, что происходит в творческом мире. Хотите узнать больше о моей работе? Позвоните или напишите.</p>
+
+        <section class="section2 columns is-vcentered is-centered">
+            <div class="column has-text-centered is-3">
+                <a href="mailto:y.kuz@icloud.com?subject=Видеомонтаж или написание музыки" class="button is-dark change_b">Связаться</a>
+            </div>
+        </section>
+
+</div>            
+        </div>
+    </section>
+    <script>
+        window.onload =function() {
+            language = window.navigator.userLanguage || window.navigator.language;
+            language = language.slice(0, 2).toLowerCase();
+            language = "en"
+            if (language !== 'ru') {
+                var data_h = ["Yura Kuznetsov. Video and music: all about me"];
+                var data_c = ["My career in the entertainment industry began in 2000. Soon, not only to me, but also to those around me, it became obvious that working in this industry was my calling. Since then, I have collaborated with clients and other artists on a variety of projects. With each of them my professional skills became better. I know how important it is to apply innovative approaches in work. I constantly follow current trends to keep abreast of everything that happens in the creative world. Want to know more about my work? Call or write."];
+                var data_b =["Contact"];
+                var data_s = "Video editing or music writing";
+
+                var elements = document.getElementsByTagName('h5')
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_h[index]
+                }
+
+                var elements = document.getElementsByTagName('p')
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_c[index]
+                }
+
+                var elements = document.getElementsByClassName('change_b');
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_b[index]
+                    if (index == 0) {
+                        var elem = elements[index].href;
+                        elem = elem.split('=')
+                        elem[1] = data_s
+                        elements[index].href = elem.join('=')
+                    }
+                }
+
+                
+            }
+        }
+      </script>
+            
+</body>
+</html>s

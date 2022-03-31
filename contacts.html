@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru" class="has-background-dark has-text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("o6BSN21Ejl6HOu2tM");
+        })();
+        </script>
+    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <title>Юра Кузнецов</title>
+</head>
+<body>
+    <section class="section1 columns is-vcentered is-centered has-text-grey-light">
+        <div class="column is-centered is-5">
+
+            <h5 class="title is-5 has-text-grey-light has-text-centered">Свяжитесь со мной</h5>
+
+            <!-- <form method="POST" action="https://app.formester.com"> -->
+            <!-- <form accept-charset='UTF-8' action='https://app.formester.com/forms/6684134d-88e4-488c-a3e6-3933a64ea0f6/submissions' method='POST'> -->
+            <!-- <form accept-charset="UTF-8" action="https://www.formbackend.com/f/1ccd3467d6e92b1d" method="POST"> -->
+                
+                <form id="mymail">
+
+                <div class="field">
+                    <label class="label has-text-grey-light">Имя</label>
+                    <div class="control">
+                        <input class="input" type="text" id="name" name="Имя" value="" placeholder="Ваше имя.." required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label has-text-grey-light">Почта</label>
+                    <div class="control">
+                        <input class="input" type="email" id="from" name="email" value="" placeholder="Адрес Вашей электронной почты.." required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class=label">Тема</label>
+                    <div class="control">
+                        <input class="input" type="text" id="subject" name="" value="" placeholder="Тема Вашего письма..">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class=label">Сообщение</label>
+                    <div class="control">
+                        <textarea class="textarea" id="message" name="" placeholder="Текст Вашего письма.."style="height:100px"></textarea>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <button class="button onclick="mymail()" is-dark">Отправить</button>
+                </div>
+              </form>
+            </div>
+        </section>
+
+</div>            
+        </div>
+    </section>
+
+    <button onclick="mymail()" class="button">Send</button>
+
+    <script>
+        window.onload =function() {
+            language = window.navigator.userLanguage || window.navigator.language;
+            language = language.slice(0, 2).toLowerCase();
+            // language = "en"
+            if (language !== 'ru') {
+                var data_h = ["Yura Kuznetsov. Video and music: all about me"];
+                var data_c = ["My career in the entertainment industry began in 2000. Soon, not only to me, but also to those around me, it became obvious that working in this industry was my calling. Since then, I have collaborated with clients and other artists on a variety of projects. With each of them my professional skills became better. I know how important it is to apply innovative approaches in work. I constantly follow current trends to keep abreast of everything that happens in the creative world. Want to know more about my work? Call or write."];
+                var data_b =["Contact"];
+                var data_s = "Video editing or music writing";
+
+                var elements = document.getElementsByTagName('h5')
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_h[index]
+                }
+
+                var elements = document.getElementsByTagName('p')
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_c[index]
+                }
+
+                var elements = document.getElementsByClassName('change_b');
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_b[index]
+                    if (index == 0) {
+                        var elem = elements[index].href;
+                        elem = elem.split('=')
+                        elem[1] = data_s
+                        elements[index].href = elem.join('=')
+                    }
+                }
+
+                
+            }
+        }
+
+function mymail() {
+    emailjs.sendForm('service_v4pvh2c', 'template_o7nfg53', '#mymail')
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+}
+
+      </script>
+        
+</body>
+</html>s

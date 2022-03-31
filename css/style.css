@@ -1,0 +1,81 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+* {
+    font-size: 17px;
+}
+
+body {
+    font-family: Nunito;
+    /*  background-color: rgb(20,20,20); */
+    /* background-color: is-dark; */
+    height: 100vh;
+}
+    
+.navbar-brand {
+    width: 100%;
+    margin-top: 30px; 
+}
+
+.navbar {
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.navbar .navbar-brand {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: -0px;
+}
+
+.navbar .navbar-brand > .navbar-item,
+.navbar .navbar-brand .navbar-link {
+    display: inline-block;
+}
+
+.round {
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-bottom: -0px; 
+}
+
+div .navbar-item {
+    margin-bottom: 0;
+}
+
+.navbar-menu {
+   margin-top: -10px;
+   margin-bottom: -10px;
+
+}
+
+.centerall {
+    height: 50vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+
+.section1 {
+    margin: 70px 0;
+    padding: 10px;
+    /* height: 50vh; */
+    /* padding: 30px; */
+}
+
+.section2 {
+    padding-top: 10vh;
+}
+
+.button:hover {
+   color: white;
+}
+
+
+/*
+.navbar-brand {
+    justify-content: space-between;
+} */
+    

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru" class="has-background-dark has-text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <title>Юра Кузнецов</title>
+</head>
+<body>
+    <section class="section1 columns is-vcentered is-centered has-text-grey-light">
+        <div class="column has-text-centered is-full">
+
+            <p>Я монтирую видео. Эксперт в звуке и музыке.</p>
+            <p>Монтирую с особым вниманием к темпу, ритму, драматургии.</p>
+            <p>Эрудиция помогает вникать в самые разные темы.</p>
+            <p>Делаю обстоятельно, как для себя.</p>
+            <p>На выходе — ёмкий, вкусный, захватывающий ролик.</p>
+
+            <section class="section2 columns is-vcentered is-centered">
+                <div class="column has-text-centered is-full">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUl8BQZrBudOaEtQL3KvqJBTVGj38AENQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=Мои видео"></iframe>
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          translate();
+        });
+      </script>
+
+    <script>
+     function translate() {
+            language = window.navigator.userLanguage || window.navigator.language;
+            language = language.slice(0, 2).toLowerCase();
+            language = "en"
+            if (language !== 'ru') {
+                var data_c = ["I am editing video. Sound and music expert.",
+                            "I edit with attention to tempo, rhythm, dramaturgy.",
+                             "Erudition helps to delve into a variety of topics.",
+                             "I do it in detail, as for myself.",
+                             "The output is a capacious, tasty, exciting video."];
+
+                var elements = document.getElementsByTagName('p')
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_c[index]
+                }
+            }
+        }
+      </script>
+            
+</body>
+</html>s

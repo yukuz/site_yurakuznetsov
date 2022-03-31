@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru" class="has-background-dark has-text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <title>Юра Кузнецов</title>
+</head>
+<body>
+    <section class="section1 columns is-vcentered is-centered has-text-grey-light">
+        <div class="column has-text-centered is-full">
+
+            <p>Приветствую. Я Юра Кузнецов.</p>
+            <p>Я пишу музыку и монтирую видео.</p>
+            <p>Интересно и со вкусом.</p>
+
+        <section class="section2 columns is-vcentered is-centered">
+            <div class="column has-text-centered is-3">
+                <a href="video.html" class="button is-dark change_b">Монтаж видео</a>
+                <a href="music.html" class="button is-dark change_b">Создание музыки</a>
+            </div>
+        </section>
+        <section class="columns is-vcentered is-centered">
+            <div class="column has-text-centered is-3">
+                <a href="mailto:y.kuz@icloud.com?subject=Видеомонтаж или написание музыки" class="button is-dark change_b">Написать мне</a>
+            </div>
+        </section>
+
+</div>            
+        </div>
+    </section>
+    <script>
+        window.onload =function() {
+            language = window.navigator.userLanguage || window.navigator.language;
+            language = language.slice(0, 2).toLowerCase();
+            language = "en"
+            if (language !== 'ru') {
+                var data_c = ["Greetings. I am Yura Kuznetsov.",
+                            "I write music and edit videos.",
+                             "Interesting and tasteful."];
+                var data_b =["Video editing",
+                             "Music Creation",
+                             "Write me"];
+                var data_s = "Video editing or music writing";
+
+                var elements = document.getElementsByTagName('p')
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_c[index]
+                }
+
+                var elements = document.getElementsByClassName('change_b');
+                var index;
+                for (index = 0; index < elements.length; ++index) {
+                    elements[index].innerHTML = data_b[index]
+                    if (index == 2) {
+                        var elem = elements[index].href;
+                        elem = elem.split('=')
+                        elem[1] = data_s
+                        elements[index].href = elem.join('=')
+                    }
+                }
+
+                
+            }
+        }
+      </script>
+            
+</body>
+</html>s

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Юра Кузнецов</title>
+  </head>
+  <body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand navbar-header col-md-4 is-dark">
+        <a href="index.html" class="navbar-center button is-dark">
+          <div class="navbar-item has-text-grey-light">Юра Кузнецов</div>
+          <img
+            class="round"
+            src="images/yura.jpg"
+            alt="Юра Кузнецов"
+            width="32"
+            height="32"
+            loading="eager"
+          />
+          <div class="navbar-item has-text-grey-light">Видео и музыка</div>
+        </a>
+      </div>
+      <button class="button navbar-burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+          <a class="navbar-item has-text-grey-light" href="video.html">Видео</a>
+          <a class="navbar-item has-text-grey-light" href="music.html">Музыка</a>
+          <a class="navbar-item has-text-grey-light" href="about.html">Обо мне</a>
+          <a class="navbar-item has-text-grey-light" href="contacts.html">Контакты</a>
+        </div>
+      </div>
+    </nav>
+    <script>
+      window.onload =function() {
+          language = window.navigator.userLanguage || window.navigator.language;
+          language = language.slice(0, 2).toLowerCase();
+          language = "en"
+          if (language !== 'ru') {
+              var data_item = ["Yura Kuznetsov",
+                          "Video and music",
+                          "Video",
+                          "Music",
+                          "About me",
+                          "Contacts"];
+
+              var elements = document.getElementsByClassName('navbar-item');
+              var index;
+              for (index = 0; index < elements.length; ++index) {
+                  elements[index].innerHTML = data_item[index]
+              }
+          }
+      }
+    </script>  </body>
+</html>
